@@ -1,6 +1,26 @@
 // Place your key bindings in this file to overwrite the defaults
 [
     {
+        "key": "ctrl+oem_plus",
+        "command": "-workbench.action.zoomIn"
+    },
+    {
+        "key": "ctrl+oem_minus",
+        "command": "-workbench.action.zoomOut"
+    },
+    {
+        "key": "ctrl+alt+o",
+        "command": "workbench.action.output.toggleOutput"
+    },
+    {
+        "key": "ctrl+shift+u",
+        "command": "editor.action.transformToUppercase"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "editor.action.transformToLowercase"
+    },
+    {
         "key": "alt+left",
         "command": "cursorWordPartLeft"
     },
@@ -23,5 +43,9 @@
     {
         "key": "alt+delete",
         "command": "deleteWordPartRight"
+    },
+    {
+        "key": "ctrl+shift+u",
+        "command": "-workbench.action.output.toggleOutput"
     }
 ]
