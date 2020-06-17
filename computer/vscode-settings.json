@@ -4,6 +4,7 @@
     "editor.fontSize": 14,
     "editor.fontLigatures": true,
     "editor.formatOnType": true,
+    "editor.insertSpaces": false,
     "editor.minimap.maxColumn": 130,
     "editor.minimap.renderCharacters": false,
     "editor.mouseWheelZoom": true,
@@ -33,6 +34,9 @@
     },
     "explorer.autoReveal": false,
     "explorer.openEditors.visible": 0,
+    "files.associations": {
+        ".markdownlint.json": "jsonc"
+    },
     "files.exclude": {
         "**/.DS_Store": true,
         "**/.git": true,
@@ -51,6 +55,7 @@
         "**/.git/subtree-cache/**": true,
         "**/node_modules/*/**": true
     },
+    "csharpextensions.privateMemberPrefix": "_",
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
         "suppressCommitNotFoundWarning": false,
@@ -59,9 +64,16 @@
         "suppressLineUncommittedWarning": false,
         "suppressNoRepositoryWarning": false,
         "suppressResultsExplorerNotice": false,
-        "suppressShowKeyBindingsNotice": true
+        "suppressShowKeyBindingsNotice": true,
+        "suppressUpdateNotice": false,
+        "suppressWelcomeNotice": true
     },
     "gitlens.keymap": "chorded",
+    "gitlens.recentChanges.highlight.locations": [
+        "gutter",
+        "line",
+        "overview"
+    ],
     "gitlens.views.fileHistory.enabled": true,
     "gitlens.views.lineHistory.enabled": true,
     "html.format.endWithNewline": true,
