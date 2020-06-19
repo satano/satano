@@ -35,7 +35,8 @@
             // Put settings here that you want to apply to all profiles.
             "fontFace": "Cascadia Code PL",
             "fontSize": 11,
-            "startingDirectory": "C:\\proj"
+            "startingDirectory": "C:\\proj",
+            "useAcrylic" : false
         },
         "list":
         [
