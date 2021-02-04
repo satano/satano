@@ -1,0 +1,102 @@
+{
+    "final_space": true,
+    "console_title": true,
+    "console_title_style": "path",
+    "console_title_template": "",
+    "blocks": [
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "horizontal_offset": 0,
+            "vertical_offset": 0,
+            "segments": [
+                {
+                    "type": "root",
+                    "style": "powerline",
+                    "foreground": "#000000",
+                    "background": "#ffee58",
+                    "properties": {
+                        "root_icon": "‼"
+                    }
+                },
+                {
+                    "type": "exit",
+                    "style": "powerline",
+                    "powerline_symbol": "",
+                    "foreground": "#ffffff",
+                    "background": "#ff8080",
+                    "properties": {
+                        "_prefix": "  ",
+                        "display_exit_code": true
+                    }
+                },
+                {
+                    "type": "az",
+                    "style": "powerline",
+                    "powerline_symbol": "",
+                    "foreground": "#000000",
+                    "background": "#9ec3f0",
+                    "properties": {
+                        "prefix": " Azure – ",
+                        "display_id": false,
+                        "display_name": true,
+                        "info_separator": " @ "
+                    }
+                },
+                {
+                    "type": "path",
+                    "style": "powerline",
+                    "powerline_symbol": "",
+                    "foreground": "#100e23",
+                    "background": "#91ddff",
+                    "properties": {
+                        "style": "full"
+                    }
+                },
+                {
+                    "type": "git",
+                    "style": "powerline",
+                    "powerline_symbol": "",
+                    "foreground": "#193549",
+                    "background": "#95ffa4",
+                    "properties": {
+                        "branch_icon": "\uE0A0 ",
+                        "local_working_icon": "",
+                        "local_staged_icon": ""
+                    }
+                },
+                {
+                    "type": "root",
+                    "style": "powerline",
+                    "powerline_symbol": "",
+                    "foreground": "#000000",
+                    "background": "#ffee58",
+                    "properties": {
+                        "root_icon": "‼"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "newline"
+        },
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "horizontal_offset": 0,
+            "vertical_offset": 0,
+            "segments": [
+                {
+                    "type": "text",
+                    "style": "plain",
+                    "foreground": "#ffffff",
+                    "properties": {
+                        "prefix": "",
+                        "postfix": "",
+                        "text": " \u276F"
+                    }
+                }
+            ]
+        }
+    ]
+}

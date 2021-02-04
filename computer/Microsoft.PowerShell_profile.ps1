@@ -1,6 +1,7 @@
 Import-Module posh-git
 Import-Module oh-my-posh
-Set-Theme Paradox
+$poshTheme = [System.IO.Path]::Join($env:HOMEPATH, "gabo-posh-theme.omp.json")
+Set-PoshPrompt -Theme $poshTheme
 
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 
