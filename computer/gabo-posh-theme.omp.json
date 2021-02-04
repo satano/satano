@@ -13,6 +13,7 @@
                 {
                     "type": "root",
                     "style": "powerline",
+                    "powerline_symbol": "",
                     "foreground": "#000000",
                     "background": "#ffee58",
                     "properties": {
@@ -26,7 +27,7 @@
                     "foreground": "#ffffff",
                     "background": "#ff8080",
                     "properties": {
-                        "_prefix": "  ",
+                        "prefix": " ! ",
                         "display_exit_code": true
                     }
                 },
