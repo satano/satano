@@ -38,7 +38,7 @@
                     "foreground": "#000000",
                     "background": "#9ec3f0",
                     "properties": {
-                        "prefix": " Azure – ",
+                        "prefix": " Azure: ",
                         "display_id": false,
                         "display_name": true,
                         "info_separator": " @ "
