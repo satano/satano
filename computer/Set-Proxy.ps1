@@ -30,6 +30,8 @@ if ($Unset) {
 	Write-Host "Remove environment variables HTTP_PROXY and HTTPS_PROXY" -ForegroundColor Green
 	$env:HTTP_PROXY = ""
 	$env:HTTPS_PROXY = ""
+	[System.Environment]::SetEnvironmentVariable("HTTP_PROXY", "", [System.EnvironmentVariableTarget]::User)
+	[System.Environment]::SetEnvironmentVariable("HTTPS_PROXY", "", [System.EnvironmentVariableTarget]::User)
 	if ($isAdmin) {
 		[System.Environment]::SetEnvironmentVariable("HTTP_PROXY", "", [System.EnvironmentVariableTarget]::Machine)
 		[System.Environment]::SetEnvironmentVariable("HTTPS_PROXY", "", [System.EnvironmentVariableTarget]::Machine)
@@ -51,6 +53,8 @@ else {
 	Write-Host "Set  environment variables HTTP_PROXY and HTTPS_PROXY" -ForegroundColor Green
 	$env:HTTP_PROXY = $Proxy
 	$env:HTTPS_PROXY = $Proxy
+	[System.Environment]::SetEnvironmentVariable("HTTP_PROXY", $Proxy, [System.EnvironmentVariableTarget]::User)
+	[System.Environment]::SetEnvironmentVariable("HTTPS_PROXY", $Proxy, [System.EnvironmentVariableTarget]::User)
 	if ($isAdmin) {
 		[System.Environment]::SetEnvironmentVariable("HTTP_PROXY", $Proxy, [System.EnvironmentVariableTarget]::Machine)
 		[System.Environment]::SetEnvironmentVariable("HTTPS_PROXY", $Proxy, [System.EnvironmentVariableTarget]::Machine)
