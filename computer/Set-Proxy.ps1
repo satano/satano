@@ -50,7 +50,7 @@ else {
 	Write-Host "Turn on system  proxy" -ForegroundColor Green
 	Invoke-Expression "reg add ""HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings"" /v ProxyEnable /t REG_DWORD /d 1 /f"
 
-	Write-Host "Set  environment variables HTTP_PROXY and HTTPS_PROXY" -ForegroundColor Green
+	Write-Host "Set environment variables HTTP_PROXY and HTTPS_PROXY" -ForegroundColor Green
 	$env:HTTP_PROXY = $Proxy
 	$env:HTTPS_PROXY = $Proxy
 	[System.Environment]::SetEnvironmentVariable("HTTP_PROXY", $Proxy, [System.EnvironmentVariableTarget]::User)
