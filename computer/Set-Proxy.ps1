@@ -10,12 +10,15 @@ if ($isAdmin) {
 
 $Unset = [string]::IsNullOrWhiteSpace($Proxy)
 
+$defaultSchema = "http://"
 $proxyNoSchema = $Proxy
 if ($Proxy.StartsWith("http://")) {
 	$proxyNoSchema = $Proxy.Substring("http://".Length)
-}
-if ($Proxy.StartsWith("https://")) {
+} elseif ($Proxy.StartsWith("https://")) {
 	$proxyNoSchema = $Proxy.Substring("https://".Length)
+} elseif (-not $Unset) {
+	$Proxy = $defaultSchema + $Proxy
+	Write-Host "Proxy was set without schema so '$defaultSchema' will be used." -ForegroundColor Yellow
 }
 
 Write-Host "Proxy: $Proxy" -ForegroundColor Yellow
