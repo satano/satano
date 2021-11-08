@@ -38,6 +38,8 @@ if ($Unset) {
 	if ($isAdmin) {
 		[System.Environment]::SetEnvironmentVariable("HTTP_PROXY", "", [System.EnvironmentVariableTarget]::Machine)
 		[System.Environment]::SetEnvironmentVariable("HTTPS_PROXY", "", [System.EnvironmentVariableTarget]::Machine)
+		Write-Host "netsh winhttp reset proxy" -ForegroundColor Green
+		netsh winhttp reset proxy
 	}
 
 	Write-Host "Rempve Git proxy" -ForegroundColor Green
@@ -61,6 +63,8 @@ else {
 	if ($isAdmin) {
 		[System.Environment]::SetEnvironmentVariable("HTTP_PROXY", $Proxy, [System.EnvironmentVariableTarget]::Machine)
 		[System.Environment]::SetEnvironmentVariable("HTTPS_PROXY", $Proxy, [System.EnvironmentVariableTarget]::Machine)
+		Write-Host "netsh winhttp set proxy" -ForegroundColor Green
+		netsh winhttp set proxy $proxyNoSchema
 	}
 
 	Write-Host "Set Git proxy" -ForegroundColor Green
