@@ -47,3 +47,8 @@ function clean-build {
 	Write-Host "Deleting 'obj' folders..."
 	Get-ChildItem -Path . -Recurse -Filter "obj" -Directory | Remove-Item -Recurse
 }
+
+# kubectl auto complete
+if (Get-Command kubectl -ErrorAction SilentlyContinue) { 
+	kubectl completion powershell | Out-String | Invoke-Expression
+}
