@@ -1,7 +1,6 @@
 Import-Module posh-git
-Import-Module oh-my-posh
-$poshTheme = [System.IO.Path]::Join($env:HOMEPATH, "gabo-posh-theme.omp.json")
-Set-PoshPrompt -Theme $poshTheme
+$poshTheme = [System.IO.Path]::Join($env:USERPROFILE, "gabo-posh-theme.omp.json")
+oh-my-posh init pwsh --config $poshTheme | Invoke-Expression
 
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 
@@ -14,31 +13,37 @@ Register-ArgumentCompleter -Native -CommandName nuke -ScriptBlock {
 }
 
 function az-prod {
-	az account set --subscription {prod-subscription-id}
+	az account set --subscription 611f2c82-f542-4424-9720-1cdb67088c2a
 	$account = az account show | ConvertFrom-Json
 	$account
 }
 
 function az-dev {
-	az account set --subscription {dev-subscription-id}
+	az account set --subscription 0f009b83-9652-4e0f-b891-2e6d816ecb88
 	$account = az account show | ConvertFrom-Json
 	$account
 }
 
 function az-gabo {
-	az account set --subscription {gabo-subscription-id}
+	az account set --subscription e321f168-8250-4ebb-b970-5b9f6a8f1847
+	$account = az account show | ConvertFrom-Json
+	$account
+}
+
+function az-mino {
+	az account set --subscription 201bbd88-5ccc-47b0-b7e5-b7dd65985971
 	$account = az account show | ConvertFrom-Json
 	$account
 }
 
 function az-sponsor {
-	az account set --subscription {sponsor-subscription-id}
+	az account set --subscription f26537be-6bf3-423e-8c30-f567aaa76bf5
 	$account = az account show | ConvertFrom-Json
 	$account
 }
 
 function GetAzureObjectById([string] $objectId) {
-	az rest --method POST --url 'https://graph.microsoft.com/v1.0/directoryObjects/getByIds' --headers 'Content-Type=application/json'  --body ('{ \"ids\": [\"' + $objectId + '\" ] }')
+	az rest --method POST --url 'https://graph.microsoft.com/v1.0/directoryObjects/getByIds' --headers 'Content-Type=application/json' --body ('{ \"ids\": [\"' + $objectId + '\" ] }')
 }
 
 function clean-build {
@@ -49,6 +54,20 @@ function clean-build {
 }
 
 # kubectl auto complete
-if (Get-Command kubectl -ErrorAction SilentlyContinue) { 
+if (Get-Command kubectl -ErrorAction SilentlyContinue) {
 	kubectl completion powershell | Out-String | Invoke-Expression
+}
+
+function GenerateRandomBytes {
+	param(
+		[int]$numberOfBytes = 32
+	)
+
+	$randomBytes = New-Object byte[] $numberOfBytes
+	$randomNumberGenerator = [System.Security.Cryptography.RandomNumberGenerator]::Create()
+	$randomNumberGenerator.GetBytes($randomBytes)
+	$randomNumberGenerator.Dispose()
+
+	$hexString = -join ($randomBytes | ForEach-Object { $_.ToString("X2") })
+	Write-Output $hexString
 }
