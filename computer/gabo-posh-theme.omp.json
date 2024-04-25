@@ -41,7 +41,7 @@
           "powerline_symbol": "",
           "background": "p:statusBg",
           "foreground": "p:statusFg",
-          "template": " {{ if eq .Code 0 }}{{ else }}{{ .Code }} {{ .Meaning }}{{ end }} ",
+          "template": " {{ if eq .Code 0 }}{{ else }}{{ if eq (.Code | toString) .Meaning }}{{ .Code }}{{ else }}{{ .Code }} {{ .Meaning }}{{ end }}{{ end }} ",
           "properties": {
             "always_enabled": true
           }
